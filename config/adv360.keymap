@@ -31,6 +31,16 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
+
+    skq: sticky_key_quick_release {
+      compatible = "zmk,behavior-sticky-key";
+      label = "STICKY_KEY_QUICK_RELEASE";
+      #binding-cells = <1>;
+      bindings = <&kp>;
+      release-after-ms = <50000>;
+      quick-release;
+    };
+
   };
 
     keymap {
@@ -43,7 +53,7 @@
    &kp TAB      &kp Q     &kp W     &kp F      &kp P     &kp B              &none      &none     &kp J      &kp L      &kp U      &kp Y      &kp SEMI   &kp BSLH
    &kp ESC      &kp A     &kp R     &kp S      &kp T     &kp G              &none      &kp LCTRL &kp LALT   &kp LGUI   &kp RCTRL  &none      &kp M   &kp N      &kp E    &kp I  &kp O    &kp SQT
    &kp LSHFT    &kp Z     &kp X     &kp C      &kp D     &kp V              &none      &none     &kp HOME   &none      &none      &kp PG_UP  &none      &none     &kp K   &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT  &kp ENTER             &kp SPACE   &kp END   &kp PG_DN  &kp BSPC  &kp DEL  &kp UP     &kp DOWN   &kp LBKT  &kp RBKT   &mo 2
+     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT  &kp ENTER             &kp SPACE   &kp END   &kp PG_DN  &kp BSPC  &skq LSHFT  &kp UP     &kp DOWN   &kp LBKT  &kp RBKT   &mo 2
             >;
         };
 
